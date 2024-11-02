@@ -31,3 +31,18 @@ audiosense/expo-env.d.ts
 
 # gitignore audiosense-api
 audiosense-api/node_modules/
+
+# macOS
+.DS_Store
+
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
