@@ -2,6 +2,10 @@ import {app, inicializandoBancoDados} from './src/app.js'
 import {PORT} from './config.js'
 
 app.listen(PORT, async () =>{
-    await inicializandoBancoDados()
-    console.log("Servidor executando")
+    try{
+        await inicializandoBancoDados()
+        console.log("Servidor executando")
+    }catch(erro){
+        throw erro
+    }
 })

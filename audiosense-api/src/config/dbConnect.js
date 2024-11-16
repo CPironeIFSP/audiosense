@@ -1,23 +1,23 @@
-import mssql from 'mssql'
-import {DB_USER, DB_PASSWORD, DB_SERVER, DB_DATABASE} from '../../config.js'
+import mysql from 'mysql2/promise'
+import {DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE} from '../../config.js'
 
 const configConexao = {
     user: DB_USER,
     password: DB_PASSWORD,
-    server: DB_SERVER,
+    host: DB_HOST,
     database: DB_DATABASE,
-    options: {
-        trustServerCertificate: true
-    }
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 }
 
 async function conectarBancoDados(){
     try{
-        const pool = await new mssql.ConnectionPool(configConexao).connect()
+        const pool = await mysql.createPool(configConexao)
         return pool
     }
     catch(erro){
-        console.log("Falha ao conectar no banco de dados ", erro)
+        throw erro
     }
 }
 
