@@ -1,4 +1,5 @@
-import {app, inicializandoBancoDados} from './src/app.js'
+import app from './src/app.js'
+import {inicializandoBancoDados} from './src/services/databaseService.js'
 import {PORT} from './config.js'
 
 app.listen(PORT, async () =>{

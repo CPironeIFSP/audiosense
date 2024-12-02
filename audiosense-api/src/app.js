@@ -1,15 +1,9 @@
 import express from 'express'
-import conectarBancoDados from './config/dbConnect.js'
-import s3 from './config/s3Connect.js'
-import {AWS_BUCKET_NAME} from '../config.js'
+import userRoutes from "./routes/userRoutes.js"
 
-const app = express()
-app.use(express.json())
+const app = express();
+app.use(express.json());
 
-let pool
+app.use("/user", userRoutes);
 
-async function inicializandoBancoDados() {
-    pool = await conectarBancoDados();
-}
-
-export {app, inicializandoBancoDados}
+export default app;

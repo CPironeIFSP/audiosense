@@ -13,3 +13,5 @@ export const AWS_REGION = process.env.AWS_REGION;
 export const AWS_BUCKET_NAME = process.env.AWS_BUCKET_NAME;
 
 export const PORT = process.env.PORT;
+
+export const JWT_SECRET = process.env.JWT_SECRET;
