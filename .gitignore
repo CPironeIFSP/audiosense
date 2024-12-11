@@ -3,3 +3,6 @@ audiosense-api/node_modules/
 
 # Variaveis de ambiente api
 audiosense-api/.env
+
+# app
+package-lock.json
