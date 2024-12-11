@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, ViewStyle } from "react-native";
+import { Text, TouchableOpacity, ViewStyle } from "react-native";
+import styles from "./CustomButtonStyle";
 
 interface CustomButtonProps {
   title: string;
@@ -35,40 +36,5 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  button: {
-    paddingVertical: 16,
-    paddingHorizontal: 16,
-    borderRadius: 16,
-    alignItems: "center",
-  },
-
-  primary: {
-    backgroundColor: "#193B16", // Cor do botão primário
-  },
-
-  secondary: {
-    backgroundColor: "transparent", // Cor do botão secundário
-    borderWidth: 2,
-    borderColor: "#193B16",
-  },
-
-  buttonText: {
-    color: "#f9f9f9",
-    fontSize: 20,
-    fontWeight: "regular",
-  },
-
-  secondaryText: {
-    color: "#2B312A",
-    fontSize: 20,
-    fontWeight: "regular",
-  },
-
-  buttonPressed: {
-    opacity: 0.7,
-  },
-});
 
 export default CustomButton;
