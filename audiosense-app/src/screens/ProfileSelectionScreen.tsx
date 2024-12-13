@@ -8,7 +8,7 @@ const ProfileSelection = ({ navigation }: any) => {
     <View style={CommonStyles.container}>
       <View style={CommonStyles.headerContainer}>
         <Image
-          source={require("../../assets/images/icon.png")}
+          source={require("../../assets/images/audiosense_icon.png")}
           style={styles.logo}
         />
         <Text style={CommonStyles.title}>Qual o seu tipo de perfil?</Text>
@@ -36,7 +36,7 @@ const ProfileSelection = ({ navigation }: any) => {
 // Estilos locais
 const styles = StyleSheet.create({
   logo: {
-    width: 160,
+    width: 96,
     height: 96,
   },
 });
