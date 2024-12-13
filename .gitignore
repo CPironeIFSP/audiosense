@@ -6,3 +6,4 @@ audiosense-api/.env
 
 # app
 package-lock.json
+node_modules

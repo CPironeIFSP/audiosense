@@ -53,6 +53,20 @@ const CommonStyles = StyleSheet.create({
     flexDirection: "column",
     gap: 16,
   },
+
+  title1: {
+    fontSize: 28, // Fonte maior para títulos
+    fontWeight: '600',
+    color: '#000', // Cor com alto contraste
+    lineHeight: 36, // Aumentar espaçamento entre linhas
+    letterSpacing: 1, // Melhorar leitura
+  },
+  bodyText1: {
+    fontSize: 18, // Fonte ideal para textos principais
+    fontWeight: '400',
+    color: '#333333', // Texto escuro sobre fundo claro
+    lineHeight: 27, // Espaçamento para leitura confortável
+  },
 });
 
 export default CommonStyles;
