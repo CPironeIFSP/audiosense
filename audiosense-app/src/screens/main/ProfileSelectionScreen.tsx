@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import CustomButton from "../components/button/CustomButton";
-import CommonStyles from "../styles/commonStyle";
+import CustomButton from "../../components/button/CustomButton";
+import CommonStyles from "../../styles/commonStyle";
 
 const ProfileSelection = ({ navigation }: any) => {
   return (

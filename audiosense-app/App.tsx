@@ -2,9 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CustomTabBar from "./src/components/tabBar/CustomTabBar";
-import AuthScreen from "./src/screens/AuthScreen";
-import ProfileSelection from "./src/screens/ProfileSelectionScreen";
-import VisitorHomeScreen from "./src/screens/VisitorHomeScreen";
+import AuthScreen from "./src/screens/main/profiles/institution/AuthScreen";
+import ProfileSelection from "./src/screens/main/ProfileSelectionScreen";
+import VisitorHomeScreen from "./src/screens/main/profiles/visitor/VisitorHomeScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
