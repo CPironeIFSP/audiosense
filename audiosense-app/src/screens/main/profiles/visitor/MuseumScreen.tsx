@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import CommonStyles from "../styles/commonStyle";
+import CommonStyles from "../../../../styles/commonStyle";
 
 const MuseumScreen: React.FC = () => {
   return (

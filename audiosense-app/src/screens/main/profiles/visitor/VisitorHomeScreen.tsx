@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import CustomButton from "../components/button/CustomButton";
-import GradientCircle from "../components/gradient circle/GradientCircle";
-import CommonStyles from "../styles/commonStyle";
+import CustomButton from "../../../../components/button/CustomButton";
+import GradientCircle from "../../../../components/gradient circle/GradientCircle";
+import CommonStyles from "../../../../styles/commonStyle";
 
-const DetectionNFC: React.FC = () => {
-  const [nfcDetected, setNfcDetected] = useState(false);
-  const [detectedWork, setDetectedWork] = useState("Nome da Obra");
+const VisitorHomeScreen: React.FC = () => {
+  const [nfcDetected, setNfcDetected] = useState(false); // Estado para verificar se o NFC foi detectado
+  const [detectedWork, setDetectedWork] = useState("Nome da Obra"); // Nome da obra detectada
 
   const handleNfcDetection = () => {
     setNfcDetected(true);
@@ -26,6 +26,7 @@ const DetectionNFC: React.FC = () => {
             <Text style={CommonStyles.subtitle}>
               Aproxime o celular da TAG da obra
             </Text>
+            {/* Simula a detecção do NFC (botão apenas para testes) */}
             <CustomButton
               title="Detectar NFC (Teste)"
               onPress={handleNfcDetection}
@@ -40,9 +41,9 @@ const DetectionNFC: React.FC = () => {
               color="#2A9924"
               style={styles.icon}
             />
-            <Text style={{ fontWeight: "normal", fontSize: 22 }}>
+            <Text style={[{ fontWeight: "normal", fontSize: 22 }]}>
               A obra{" "}
-              <Text style={{ fontWeight: "bold", fontSize: 22 }}>
+              <Text style={[{ fontWeight: "bold", fontSize: 22 }]}>
                 {detectedWork}
               </Text>{" "}
               foi detectada.{"\n"}Deseja ouvir a descrição?
@@ -73,12 +74,12 @@ const DetectionNFC: React.FC = () => {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "center", // Centraliza horizontalmente
+    justifyContent: "center", // Centraliza verticalmente
   },
   icon: {
     marginBottom: 16,
   },
 });
 
-export default DetectionNFC;
+export default VisitorHomeScreen;

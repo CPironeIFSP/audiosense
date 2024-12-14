@@ -1,16 +1,15 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import CustomButton from "../components/button/CustomButton";
-import CommonStyles from "../styles/commonStyle";
+import CustomButton from "../../components/button/CustomButton";
+import CommonStyles from "../../styles/commonStyle";
 
 const ProfileSelection = ({ navigation }: any) => {
   return (
     <View style={CommonStyles.space_between_container}>
       <View style={CommonStyles.headerContainer}>
         <Image
-          source={require("../../assets/images/audiosense_icon.png")}
+          source={require("../../../assets/images/audiosense_icon.png")}
           style={styles.logo}
-          accessibilityLabel="Logo AudioSense"
         />
         <Text style={CommonStyles.title}>Qual o seu tipo de perfil?</Text>
         <Text style={CommonStyles.description}>
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
   logo: {
     height: 120,
     width: "100%",
-    resizeMode: "contain",
+    objectFit: "contain",
   },
 });
 

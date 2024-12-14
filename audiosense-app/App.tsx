@@ -4,11 +4,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useEffect, useState } from "react";
 import CustomTabBar from "./src/components/tabBar/CustomTabBar";
-import AuthScreen from "./src/screens/AuthScreen";
-import MuseumScreen from "./src/screens/MuseumScreen";
-import ProfileSelection from "./src/screens/ProfileSelectionScreen";
+import AuthScreen from "./src/screens/main/profiles/institution/AuthScreen";
+import MuseumScreen from "./src/screens/main/profiles/visitor/MuseumScreen";
+import VisitorHomeScreen from "./src/screens/main/profiles/visitor/VisitorHomeScreen";
+import ProfileSelection from "./src/screens/main/ProfileSelectionScreen";
 import VisionSetupScreen from "./src/screens/VisionSetupScreen";
-import VisitorHomeScreen from "./src/screens/VisitorHomeScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

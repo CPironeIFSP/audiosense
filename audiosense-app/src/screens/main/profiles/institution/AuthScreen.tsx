@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import CustomButton from "../components/button/CustomButton";
-import CustomInput from "../components/input/CustomInput";
-import CommonStyles from "../styles/commonStyle";
+import CustomButton from "../../../../components/button/CustomButton";
+import CustomInput from "../../../../components/input/CustomInput";
+import CommonStyles from "../../../../styles/commonStyle";
 
 const AuthScreen: React.FC = () => {
   const [email, setEmail] = useState("");
