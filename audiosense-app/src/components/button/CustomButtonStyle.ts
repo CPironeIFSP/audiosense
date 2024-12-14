@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   button: {
     paddingVertical: 16,
     paddingHorizontal: 16,
-    borderRadius: 16,
+    borderRadius: 56,
     alignItems: "center",
     width: "100%",
     marginVertical: 8,
@@ -26,13 +26,13 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#f9f9f9",
-    fontSize: 20,
-    fontWeight: "normal",
+    fontSize: 24,
+    fontWeight: "bold",
   },
   secondaryText: {
     color: "#2B312A",
-    fontSize: 20,
-    fontWeight: "normal",
+    fontSize: 24,
+    fontWeight: "bold",
   },
   disabledText: {
     color: "#696969",

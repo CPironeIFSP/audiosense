@@ -1,11 +1,18 @@
-// screens/HomeScreen.tsx
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  // Remova o import de Button, se existir
+} from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../InstitutionNavigator';
 import { useNavigation } from '@react-navigation/native';
+import CommonStyles from "/workspaces/audiosense/audiosense-app/src/styles/commonStyle";
 
-// Definição do tipo de navegação para HomeScreen
+// Tipo de navegação
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'Home'
@@ -14,7 +21,6 @@ type HomeScreenNavigationProp = NativeStackNavigationProp<
 interface Item {
   id: string;
   name: string;
-  // outros campos...
 }
 
 const HomeScreen: React.FC = () => {
@@ -22,48 +28,66 @@ const HomeScreen: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
 
   useEffect(() => {
-    // Carregar itens da API ou armazenamento local
-    // Exemplo:
-    // fetchItems().then(data => setItems(data));
-    // Placeholder de exemplo:
     setItems([
       { id: '1', name: 'Item 1' },
       { id: '2', name: 'Item 2' },
     ]);
   }, []);
 
-  const renderItem = ({ item }: { item: Item }) => (
-    <TouchableOpacity
-      onPress={() => navigation.navigate('Details', { id: item.id })}
-    >
-      <View style={styles.itemContainer}>
-        <Text>{item.name}</Text>
-      </View>
-    </TouchableOpacity>
-  );
-
   return (
     <View style={styles.container}>
-      <FlatList
-        data={items}
-        keyExtractor={(item) => item.id}
-        renderItem={renderItem}
-      />
-      <Button
-        title="Adicionar Novo"
-        onPress={() => navigation.navigate('Create')}
-      />
+      <View style={CommonStyles.headerContainer}>
+        <Image
+          source={require("/workspaces/audiosense/audiosense-app/assets/images/audiosense_icon.png")}
+          style={styles.logo}
+        />
+        <Text style={CommonStyles.title}>Bem-vindo, Instituição X</Text>
+      </View>
+
+      {/* Espaço livre para lista ou outros conteúdos */}
+      <View style={{ flex: 1 }} />
+
+      {/* Botão VISUALIZAR TAGS próximo ao rodapé */}
+      <View style={styles.footerContainer}>
+        <TouchableOpacity
+          style={styles.bigButton}
+          onPress={() => navigation.navigate("Crud", { isNew: false, id: "1" })}
+        >
+          <Text style={styles.buttonText}>VISUALIZAR TAGS</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
+export default HomeScreen;
+
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16 },
-  itemContainer: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderColor: '#ccc',
+  container: {
+    flex: 1,
+    padding: 6,
+  },
+  logo: {
+    height: 120,
+    width: "100%",
+    resizeMode: "contain",
+  },
+  // FOOTER Container para posicionar o botão próximo ao rodapé
+  footerContainer: {
+    marginBottom: 20, // Ajuste como preferir
+    // Se quiser colar no rodapé mesmo, pode usar position absolute:
+    // position: 'absolute', bottom: 20, left: 20, right: 20
+  },
+  bigButton: {
+    backgroundColor: '#1E90FF',
+    height: 60, // Aumentando altura do botão
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
-
-export default HomeScreen;

@@ -1,19 +1,19 @@
 // src/navigation/AppNavigator.tsx
+
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import AuthScreen from '/workspaces/audiosense/audiosense-app/src/screens/main/profiles/institution/AuthScreen'; // Ajuste o caminho conforme sua estrutura
+import AuthScreen from '/workspaces/audiosense/audiosense-app/src/screens/main/profiles/institution/AuthScreen';
 import HomeScreen from './crud/HomeScreen';
-import CreateScreen from './crud/CreateScreen';
-import UpdateScreen from './crud/UpdateScreen';
+import CrudScreen from './crud/CrudScreen'; // <-- A tela unificada
 import DetailsScreen from './crud/DetailsScreen';
 
+// Ajuste as rotas:
 export type RootStackParamList = {
   Auth: undefined;
   Home: undefined;
-  Create: undefined;
-  Update: { id: string };
+  Crud: { isNew?: boolean; id?: string }; // Rota unificada
   Details: { id: string };
 };
 
@@ -26,27 +26,23 @@ const AppNavigator: React.FC = () => {
         <Stack.Screen 
           name="Auth" 
           component={AuthScreen} 
-          options={{ headerShown: false }} // Opcional: Esconde o cabeçalho na tela de autenticação
+          options={{ headerShown: false }}
         />
         <Stack.Screen 
           name="Home" 
           component={HomeScreen} 
-          options={{ title: 'Página Inicial' }} 
+          options={{ title: 'Página Inicial' }}
         />
-        <Stack.Screen 
-          name="Create" 
-          component={CreateScreen} 
-          options={{ title: 'Adicionar Novo' }} 
+        {/* Rota única, substituindo Create e Update */}
+        <Stack.Screen
+          name="Crud"
+          component={CrudScreen}
+          options={{ title: 'Adicionar ou Editar Obra' }}
         />
-        <Stack.Screen 
-          name="Update" 
-          component={UpdateScreen} 
-          options={{ title: 'Editar Item' }} 
-        />
-        <Stack.Screen 
-          name="Details" 
-          component={DetailsScreen} 
-          options={{ title: 'Detalhes do Item' }} 
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{ title: 'Detalhes do Item' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

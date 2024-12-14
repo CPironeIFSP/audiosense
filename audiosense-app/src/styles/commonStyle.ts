@@ -19,14 +19,14 @@ const CommonStyles = StyleSheet.create({
 
   // Títulos
   title: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: "bold",
     textAlign: "center",
     color: "#141914",
   },
 
   subtitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
     color: "#141914",
@@ -34,7 +34,7 @@ const CommonStyles = StyleSheet.create({
 
   // Descrições e parágrafos
   description: {
-    fontSize: 18,
+    fontSize: 20,
     color: "#223A1F",
     textAlign: "center",
   },
@@ -42,13 +42,14 @@ const CommonStyles = StyleSheet.create({
   // Estilo para o container dos botões
   buttonContainer: {
     width: "100%",
-    gap: 16,
+    gap: 10,
   },
 
   // Estilo para grupo de inputs verticais
   inputGroup: {
     flexDirection: "column",
-    gap: 16,
+    gap: 18,
+    fontSize: 10,
   },
 });
 

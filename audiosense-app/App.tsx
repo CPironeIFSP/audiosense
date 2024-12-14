@@ -1,4 +1,5 @@
-// App.tsx
+// App.tsx (exemplo final ajustado)
+
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -11,22 +12,18 @@ import VisitorHomeScreen from "./src/screens/main/profiles/visitor/VisitorHomeSc
 import ProfileSelection from "./src/screens/main/ProfileSelectionScreen";
 import VisionSetupScreen from "./src/screens/VisionSetupScreen";
 
-// Import CRUD screens
+// Se você tem a tela Home (que lista registros), CRUD unificada e Details:
 import HomeScreen from "./src/screens/main/profiles/institution/home/crud/HomeScreen";
-import CreateScreen from "./src/screens/main/profiles/institution/home/crud/CreateScreen";
-import UpdateScreen from "./src/screens/main/profiles/institution/home/crud/UpdateScreen";
+import CrudScreen from "./src/screens/main/profiles/institution/home/crud/CrudScreen";
 import DetailsScreen from "./src/screens/main/profiles/institution/home/crud/DetailsScreen";
 
-// Import type
-import { RootStackParamList } from "./src/types/navigation";
+import { RootStackParamList } from "./src/types/navigation"; // Ajuste conforme seu projeto
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const [initialRoute, setInitialRoute] = useState<
-    "VisionSetup" | "ProfileSelection"
-  >();
+  const [initialRoute, setInitialRoute] = useState<"VisionSetup" | "ProfileSelection">();
 
   useEffect(() => {
     const checkFirstTime = async () => {
@@ -68,22 +65,21 @@ export default function App() {
           component={AuthScreen}
           options={{ title: "Entrar" }}
         />
-        {/* Adicionando as telas de CRUD */}
+
+        {/* ROTAS CRUD */}
         <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{ title: "Página Inicial" }}
         />
+
+        {/* Rota unificada: 'Crud' para Adicionar Novo ou Editar */}
         <Stack.Screen
-          name="Create"
-          component={CreateScreen}
-          options={{ title: "Adicionar Novo" }}
+          name="Crud"
+          component={CrudScreen}
+          options={{ title: "Adicionar ou Editar" }}
         />
-        <Stack.Screen
-          name="Update"
-          component={UpdateScreen}
-          options={{ title: "Editar Item" }}
-        />
+
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
