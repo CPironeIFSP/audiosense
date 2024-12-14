@@ -1,28 +1,33 @@
-// InstitutionNavigator.tsx
+// src/navigation/AppNavigator.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import HomeScreen from '.src/screens/HomeScreen';
-import CreateScreen from './screens/CreateScreen';
-import UpdateScreen from 'audiosense-app/src/screens/main/profiles/institution/home/crud/UpdateScreen';
-import DetailsScreen from './screens/main/profiles/institution/home/crud/DetailsScreen';
+import AuthScreen from '/workspaces/audiosense/audiosense-app/src/screens/main/profiles/institution/AuthScreen'; // Ajuste o caminho conforme sua estrutura
+import HomeScreen from './crud/HomeScreen';
+import CreateScreen from './crud/CreateScreen';
+import UpdateScreen from './crud/UpdateScreen';
+import DetailsScreen from './crud/DetailsScreen';
 
-// Definição dos parâmetros das rotas para TypeScript
 export type RootStackParamList = {
+  Auth: undefined;
   Home: undefined;
   Create: undefined;
   Update: { id: string };
   Details: { id: string };
 };
 
-// Criação do stack navigator utilizando createNativeStackNavigator
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const InstitutionNavigator: React.FC = () => {
+const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Auth">
+        <Stack.Screen 
+          name="Auth" 
+          component={AuthScreen} 
+          options={{ headerShown: false }} // Opcional: Esconde o cabeçalho na tela de autenticação
+        />
         <Stack.Screen 
           name="Home" 
           component={HomeScreen} 
@@ -48,4 +53,4 @@ const InstitutionNavigator: React.FC = () => {
   );
 };
 
-export default InstitutionNavigator;
+export default AppNavigator;

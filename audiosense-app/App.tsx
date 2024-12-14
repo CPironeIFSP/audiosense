@@ -1,3 +1,4 @@
+// App.tsx
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -10,7 +11,16 @@ import VisitorHomeScreen from "./src/screens/main/profiles/visitor/VisitorHomeSc
 import ProfileSelection from "./src/screens/main/ProfileSelectionScreen";
 import VisionSetupScreen from "./src/screens/VisionSetupScreen";
 
-const Stack = createNativeStackNavigator();
+// Import CRUD screens
+import HomeScreen from "./src/screens/main/profiles/institution/home/crud/HomeScreen";
+import CreateScreen from "./src/screens/main/profiles/institution/home/crud/CreateScreen";
+import UpdateScreen from "./src/screens/main/profiles/institution/home/crud/UpdateScreen";
+import DetailsScreen from "./src/screens/main/profiles/institution/home/crud/DetailsScreen";
+
+// Import type
+import { RootStackParamList } from "./src/types/navigation";
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -57,6 +67,27 @@ export default function App() {
           name="AuthScreen"
           component={AuthScreen}
           options={{ title: "Entrar" }}
+        />
+        {/* Adicionando as telas de CRUD */}
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Página Inicial" }}
+        />
+        <Stack.Screen
+          name="Create"
+          component={CreateScreen}
+          options={{ title: "Adicionar Novo" }}
+        />
+        <Stack.Screen
+          name="Update"
+          component={UpdateScreen}
+          options={{ title: "Editar Item" }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{ title: "Detalhes do Item" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
