@@ -14,7 +14,7 @@ const AuthScreen: React.FC = () => {
   };
 
   return (
-    <View style={CommonStyles.container}>
+    <View style={CommonStyles.space_between_container}>
       <View style={CommonStyles.headerContainer}>
         <Text style={CommonStyles.title}>Sou uma instituição</Text>
         <Text style={CommonStyles.description}>

@@ -5,11 +5,12 @@ import CommonStyles from "../styles/commonStyle";
 
 const ProfileSelection = ({ navigation }: any) => {
   return (
-    <View style={CommonStyles.container}>
+    <View style={CommonStyles.space_between_container}>
       <View style={CommonStyles.headerContainer}>
         <Image
-          source={require("../../assets/images/icon.png")}
+          source={require("../../assets/images/audiosense_icon.png")}
           style={styles.logo}
+          accessibilityLabel="Logo AudioSense"
         />
         <Text style={CommonStyles.title}>Qual o seu tipo de perfil?</Text>
         <Text style={CommonStyles.description}>
@@ -36,8 +37,9 @@ const ProfileSelection = ({ navigation }: any) => {
 // Estilos locais
 const styles = StyleSheet.create({
   logo: {
-    width: 160,
-    height: 96,
+    height: 120,
+    width: "100%",
+    resizeMode: "contain",
   },
 });
 

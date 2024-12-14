@@ -6,8 +6,8 @@ import GradientCircle from "../components/gradient circle/GradientCircle";
 import CommonStyles from "../styles/commonStyle";
 
 const DetectionNFC: React.FC = () => {
-  const [nfcDetected, setNfcDetected] = useState(false); // Estado para verificar se o NFC foi detectado
-  const [detectedWork, setDetectedWork] = useState("Nome da Obra"); // Nome da obra detectada
+  const [nfcDetected, setNfcDetected] = useState(false);
+  const [detectedWork, setDetectedWork] = useState("Nome da Obra");
 
   const handleNfcDetection = () => {
     setNfcDetected(true);
@@ -18,7 +18,7 @@ const DetectionNFC: React.FC = () => {
   };
 
   return (
-    <View style={CommonStyles.container}>
+    <View style={CommonStyles.space_between_container}>
       <View style={styles.content}>
         {!nfcDetected ? (
           <>
@@ -26,7 +26,6 @@ const DetectionNFC: React.FC = () => {
             <Text style={CommonStyles.subtitle}>
               Aproxime o celular da TAG da obra
             </Text>
-            {/* Simula a detecção do NFC (botão apenas para testes) */}
             <CustomButton
               title="Detectar NFC (Teste)"
               onPress={handleNfcDetection}
@@ -41,9 +40,12 @@ const DetectionNFC: React.FC = () => {
               color="#2A9924"
               style={styles.icon}
             />
-            <Text style={CommonStyles.subtitle}>
-              A obra "{detectedWork}" foi detectada.{"\n"}Deseja ouvir a
-              descrição?
+            <Text style={{ fontWeight: "normal", fontSize: 22 }}>
+              A obra{" "}
+              <Text style={{ fontWeight: "bold", fontSize: 22 }}>
+                {detectedWork}
+              </Text>{" "}
+              foi detectada.{"\n"}Deseja ouvir a descrição?
             </Text>
           </>
         )}
@@ -71,8 +73,8 @@ const DetectionNFC: React.FC = () => {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    alignItems: "center", // Centraliza horizontalmente
-    justifyContent: "center", // Centraliza verticalmente
+    alignItems: "center",
+    justifyContent: "center",
   },
   icon: {
     marginBottom: 16,
