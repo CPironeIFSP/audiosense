@@ -6,10 +6,14 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "audiosense.apk"
     },
     "android": {
-      "permissions": ["NFC"]
+      "permissions": [
+        "NFC"
+      ],
+      "package": "audiosense.apk"
     },
     "web": {
       "favicon": "./assets/favicon.png"

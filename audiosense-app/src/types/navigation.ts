@@ -6,6 +6,7 @@ export type RootStackParamList = {
   VisitorTabs: undefined;
   AuthScreen: undefined;
   Home: undefined;
-  Crud: { isNew?: boolean; id?: string }; // rota unificada
+  CrudScreen: undefined;
+  NfcDetectionScreen: undefined;
   Details: { id: string };
 };

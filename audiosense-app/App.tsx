@@ -16,6 +16,7 @@ import VisionSetupScreen from "./src/screens/VisionSetupScreen";
 import HomeScreen from "./src/screens/main/profiles/institution/home/crud/HomeScreen";
 import CrudScreen from "./src/screens/main/profiles/institution/home/crud/CrudScreen";
 import DetailsScreen from "./src/screens/main/profiles/institution/home/crud/DetailsScreen";
+import NfcDetectionScreen from "./src/screens/main/profiles/institution/home/crud/NfcDetectionScreen";
 
 import { RootStackParamList } from "./src/types/navigation"; // Ajuste conforme seu projeto
 
@@ -75,11 +76,15 @@ export default function App() {
 
         {/* Rota unificada: 'Crud' para Adicionar Novo ou Editar */}
         <Stack.Screen
-          name="Crud"
+          name="CrudScreen"
           component={CrudScreen}
           options={{ title: "Adicionar ou Editar" }}
         />
-
+        <Stack.Screen
+          name="NfcDetectionScreen"
+          component={NfcDetectionScreen}
+          options={{ title: 'Adicionar TAG via NFC' }}
+        />
         <Stack.Screen
           name="Details"
           component={DetailsScreen}

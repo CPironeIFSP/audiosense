@@ -57,7 +57,7 @@ const DetailsScreen: React.FC = () => {
       {/* Outros campos */}
       <Button
         title="Editar"
-        onPress={() => navigation.navigate('Crud', { id: item.id })}
+        onPress={() => navigation.navigate('CrudScreen',)}
       />
       <View style={{ marginTop: 16 }}>
         <Button title="Deletar" onPress={handleDelete} color="red" />

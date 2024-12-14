@@ -6,14 +6,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import AuthScreen from '/workspaces/audiosense/audiosense-app/src/screens/main/profiles/institution/AuthScreen';
 import HomeScreen from './crud/HomeScreen';
-import CrudScreen from './crud/CrudScreen'; // <-- A tela unificada
+import CrudScreen from './crud/CrudScreen';
+import NfcDetectionScreen from './crud/NfcDetectionScreen'; 
 import DetailsScreen from './crud/DetailsScreen';
 
 // Ajuste as rotas:
 export type RootStackParamList = {
   Auth: undefined;
   Home: undefined;
-  Crud: { isNew?: boolean; id?: string }; // Rota unificada
+  CrudScreen: undefined;
+  NfcDetectionScreen: undefined;
   Details: { id: string };
 };
 
@@ -34,15 +36,23 @@ const AppNavigator: React.FC = () => {
           options={{ title: 'Página Inicial' }}
         />
         {/* Rota única, substituindo Create e Update */}
-        <Stack.Screen
-          name="Crud"
-          component={CrudScreen}
-          options={{ title: 'Adicionar ou Editar Obra' }}
-        />
+        
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
           options={{ title: 'Detalhes do Item' }}
+        />
+
+        <Stack.Screen
+        name="CrudScreen"
+        component={CrudScreen}
+        options={{ title: 'Lista de Obras' }}
+        />
+
+        <Stack.Screen
+        name="NfcDetectionScreen"
+        component={NfcDetectionScreen}
+        options={{ title: 'Adicionar TAG via NFC' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

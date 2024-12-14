@@ -51,7 +51,7 @@ const HomeScreen: React.FC = () => {
       <View style={styles.footerContainer}>
         <TouchableOpacity
           style={styles.bigButton}
-          onPress={() => navigation.navigate("Crud", { isNew: false, id: "1" })}
+          onPress={() => navigation.navigate("CrudScreen",)}
         >
           <Text style={styles.buttonText}>VISUALIZAR TAGS</Text>
         </TouchableOpacity>
