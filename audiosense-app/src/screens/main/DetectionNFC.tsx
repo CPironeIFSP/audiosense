@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons.js";
 import CustomButton from "../../components/button/CustomButton";
 import GradientCircle from "../../components/gradient circle/GradientCircle";
 import CommonStyles from "../../styles/commonStyle";
