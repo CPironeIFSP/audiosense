@@ -8,10 +8,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    
-  },
-  "devDependencies": {
-
+    "expo": "^52.0.18"
   },
   "private": true
 }
