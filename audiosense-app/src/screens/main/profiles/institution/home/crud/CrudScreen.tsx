@@ -12,7 +12,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 //Ajuste o import do RootStackParamList conforme seu projeto
-import { RootStackParamList } from '/workspaces/audiosense/audiosense-app/src/types/navigation';
+import { RootStackParamList } from 'C:/Users/André/Documents/GitHub/audiosense/audiosense-app/src/types/navigation';
 
 type CrudScreenNavProp = NativeStackNavigationProp<RootStackParamList, 'CrudScreen'>;
 
