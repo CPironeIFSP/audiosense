@@ -12,6 +12,7 @@ import VisitorHomeScreen from "./src/screens/main/profiles/visitor/VisitorHomeSc
 import ProfileSelection from "./src/screens/main/ProfileSelectionScreen";
 import VisionSetupScreen from "./src/screens/VisionSetupScreen";
 
+//Teste de Commit
 // Se você tem a tela Home (que lista registros), CRUD unificada e Details:
 import HomeScreen from "./src/screens/main/profiles/institution/home/crud/HomeScreen";
 import CrudScreen from "./src/screens/main/profiles/institution/home/crud/CrudScreen";
@@ -88,10 +89,11 @@ export default function App() {
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
-          options={{ title: "Detalhes do Item" }}
+          options={{ title: "Detalhes da Tag" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
+
   );
 }
 
