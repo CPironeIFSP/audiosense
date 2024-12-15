@@ -75,7 +75,7 @@ export default function App() {
           options={{ title: "Página Inicial" }}
         />
 
-        {/* Rota unificada: 'Crud' para Adicionar Novo ou Editar */}
+        {/* Rota unificada: "Crud" para Adicionar Novo ou Editar */}
         <Stack.Screen
           name="CrudScreen"
           component={CrudScreen}
