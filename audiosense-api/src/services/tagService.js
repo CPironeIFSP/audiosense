@@ -152,7 +152,7 @@ async function getAudio(uid, tpUsuario){
 
     tpUsuario = parseInt(tpUsuario);
 
-    if (tpUsuario === 1){
+    if (tpUsuario === 1 || !audios.URL2){
         return { url: audios.URL1};
     }else if (tpUsuario === 2){
         return { url: audios.URL2};
