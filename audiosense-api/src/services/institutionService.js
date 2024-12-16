@@ -71,7 +71,7 @@ async function updateInstitutionDetails(dados){
     const resultado = await spCrudInstituicao(id, nome, email, null, cnpj, endereco, bairro, numero, estado, cep, 3);
 
     if (!resultado || resultado.affectedRows === 0){
-        const error = new Error("Instituição não encontrado.");
+        const error = new Error("Instituição não encontrada.");
         error.status = 404;
         throw error;
     }
@@ -124,8 +124,6 @@ async function deleteInstitution(id){
         error.status = 404;
         throw error;
     }
-
-    return { message: "instituicao deletada com sucesso!" };
 }
 
 async function authenticationInstitution(dados){

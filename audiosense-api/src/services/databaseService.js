@@ -42,4 +42,16 @@ async function spCrudInstituicao(id, nome, email, senha, cnpj, endereco, bairro,
     }
 }
 
-export {inicializandoBancoDados, spCrudUsuario, spCrudTag, spCrudInstituicao}
+async function verificaIdInstituicao(idInstituicao){
+    try{
+        const [rows] = await pool.query(
+            `SELECT * FROM TB_INSTITUICAO WHERE ID = ?`,
+            [idInstituicao]
+        )
+        return rows
+    }catch(erro){
+        console.error('Erro ao executar a verificacao de instituicao:', erro)
+    }
+}
+
+export {inicializandoBancoDados, spCrudUsuario, spCrudTag, spCrudInstituicao, verificaIdInstituicao}
